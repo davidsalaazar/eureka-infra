@@ -1,0 +1,29 @@
+server:
+  port: 65120
+
+spring:
+  application:
+    name: items-service
+  cloud:
+    config:
+      discovery:
+        serviceId: CONFIG-SERVER
+        enabled: true
+  profiles:
+    active: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+service:
+  products:
+    get-list: http://products-service/api/get-list
+    get-one: http://products-service/api/get/

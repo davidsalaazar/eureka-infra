@@ -1,0 +1,21 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: authorization-server
+  jackson:
+    time-zone: America/Mexico_City
+
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
+
+jwt:
+  expiresIn: 60
+
+logging:
+  level:
+    com.experience.oauth: INFO
+    org:
+      hibernate:
+        SQL: debug
